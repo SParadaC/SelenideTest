@@ -12,6 +12,13 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
     public class HomePage {
         By Store_info_Locator = By.xpath("//section[@id='block_contact_infos']/div/ul/li");
         By Search_Box_Locator = By.cssSelector("#search_query_top");
+        By Chiffon_Dress_Locator = By.xpath("//img [@alt='Printed Chiffon Dress']");
+
+
+        public HomePage Selected_Product_From_Homepage (){
+            $(Chiffon_Dress_Locator).scrollIntoView(true).click();
+            return this;
+        }
 
    public HomePage Search_For_Valid_Product(){
        $(Search_Box_Locator).clear();
