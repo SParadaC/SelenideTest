@@ -21,10 +21,10 @@ public class CodeChallenge {
         Selenide.open("/");
         getWebDriver().manage().window().maximize();
     }
-   /* @Test
-    public void SearchForValidProduct(){
-
-    }*/
+   @Test
+    public void Add_Product_From_Main() {
+       Automation.Selected_Product_From_Homepage();
+   }
     @Test
     public void Search_Result_Valid(){
         Automation.Search_For_Valid_Product();
@@ -37,7 +37,7 @@ public class CodeChallenge {
         Search.Invalid_Search_Result();
     }
 
-    @Test(alwaysRun = false)
+    @Test
     public void StoreInformation() {
 
         Automation.find_Store_Information();
