@@ -7,24 +7,36 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class HomePage {
+    public class HomePage {
+        By Store_info_Locator = By.xpath("//section[@id='block_contact_infos']/div/ul/li");
+        By Search_Box_Locator = By.cssSelector("#search_query_top");
 
-    public HomePage open(){
-        Selenide.open("/");
-        return this;
-    }
+   public HomePage Search_For_Valid_Product(){
+       $(Search_Box_Locator).clear();
+       $(Search_Box_Locator).setValue("Chiffon Dress").pressEnter();
+       return this;
+   }
 
+   public HomePage Search_For_Invalid_Product(){
+       $(Search_Box_Locator).clear();
+       $(Search_Box_Locator).setValue("Wedding dress").pressEnter();
+       return this;
+   }
+
+    //Method to scroll down where store information is located, this method can be added to Get_Store_Information
+    //To reduce code
     public HomePage find_Store_Information(){
-        $(By.xpath("//section[@id='block_contact_infos']/div/ul/li")).scrollIntoView(true);
+        $(Store_info_Locator).scrollIntoView(true);
         return this;
     }
 
-    //Condition matchText was not the best option since it require
+    //Validated store information from address, phone and email
     public HomePage Get_Store_Information(){
-        ElementsCollection Information = $$(By.xpath("//section[@id='block_contact_infos']/div/ul/li"));
+        ElementsCollection Information = $$(Store_info_Locator);
         System.out.println(Information.get(0).should(Condition.text("Selenium Framework, Research Triangle Park, North Carolina, USA")));
-        System.out.println(Information.get(1).shouldBe(Condition.matchText("Call us now: (347) 466-7432")));
+        System.out.println(Information.get(1).shouldBe(Condition.exactText("Call us now: (347) 466-7432")));
         System.out.println(Information.get(2).shouldHave(Condition.exactText("Email: support@seleniumframework.com")));
         return this;
     }
