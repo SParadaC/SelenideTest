@@ -1,6 +1,7 @@
 package test;
 
 import Pages.HomePage;
+import Pages.ProductPage;
 import Pages.SearchResultPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -14,6 +15,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class CodeChallenge {
     HomePage Automation = new HomePage();
     SearchResultPage Search = new SearchResultPage();
+    ProductPage Product = new ProductPage();
 
     @BeforeClass
     public static void setup() {
@@ -22,8 +24,15 @@ public class CodeChallenge {
         getWebDriver().manage().window().maximize();
     }
    @Test
-    public void Add_Product_From_Main() {
+    public void Add_Product_From_Main() throws InterruptedException {
        Automation.Selected_Product_From_Homepage();
+       Product.Send_Value_of_Quantity();
+       Product.Reduce_Quantity_By_Button();
+       Product.Select_Size();
+       Thread.sleep(5000);
+       Product.Color_Option();
+       Thread.sleep(5000);
+       Product.Add_to_Cart();
    }
     @Test
     public void Search_Result_Valid(){
@@ -46,7 +55,7 @@ public class CodeChallenge {
     }
     @AfterClass
     public static void afterClass(){
-                Selenide.closeWebDriver();
+                //Selenide.closeWebDriver();
     }
 
 }
