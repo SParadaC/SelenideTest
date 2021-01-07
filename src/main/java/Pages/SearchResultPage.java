@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SearchResultPage {
     By Search_Results_Found_Locator = By.cssSelector(".heading-counter");
-    By Logo_Locator = By.xpath("//img [@class='logo img-responsive']");
+    //By Logo_Locator = By.xpath("//img [@class='logo img-responsive']");
     By Results_Grid_Locator = By.cssSelector("[class='product_list grid row']>li");
     By Continue_Shopping_Btn_Locator = By.cssSelector("[title='Continue shopping']");
     By Proceed_To_CheckOut_Btn_Locator = By.cssSelector("[title='Proceed to checkout']");
@@ -19,7 +19,6 @@ public class SearchResultPage {
         WebElement results =  $(Search_Results_Found_Locator);
         $(Search_Results_Found_Locator).shouldNotBe(Condition.exactText("0 results have been found."));
         System.out.println(results.getText());
-
         return this;
     }
     public SearchResultPage Invalid_Search_Result (){
@@ -27,11 +26,10 @@ public class SearchResultPage {
         WebElement results =  $(Search_Results_Found_Locator);
         $(Search_Results_Found_Locator).shouldBe(Condition.exactText("0 results have been found."));
         System.out.println(results.getText());
-
         return this;
     }
 
-    public SearchResultPage Results_Founds() throws InterruptedException {
+    public SearchResultPage Results_Founds()  {
         ElementsCollection Products = $$(Results_Grid_Locator);
         System.out.println("Amount of products found as dress: " + Products.size());
        for (int i=1; i<Products.size(); i++
@@ -53,11 +51,8 @@ public class SearchResultPage {
                 $(Proceed_To_CheckOut_Btn_Locator).isEnabled();
                 $(Proceed_To_CheckOut_Btn_Locator).click();
                $(Continue_Shopping_Btn_Locator).shouldNotBe(Condition.visible);
-            }else {}
-
+            }
         }
-
-
         return this;
     }
 }

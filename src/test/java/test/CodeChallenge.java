@@ -6,7 +6,6 @@ import Pages.ProductPage;
 import Pages.SearchResultPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
