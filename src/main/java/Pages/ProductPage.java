@@ -13,6 +13,8 @@ public class ProductPage {
     By Size_DropDown_Locator = By.cssSelector("#group_1");
     By Color_Options_Locator = By.cssSelector("#color_to_pick_list>li>a");
     By Add_To_Cart_Btn_Locator = By.cssSelector("button[class='exclusive']");
+    By Continue_Shopping_Btn_Locator = By.cssSelector("[title='Continue shopping']");
+    By Proceed_To_CheckOut_Btn_Locator = By.cssSelector("[title='Proceed to checkout']");
 
     public ProductPage Send_Value_of_Quantity(){
         $(Quantity_TextBox_Locator).clear();
@@ -50,6 +52,17 @@ public class ProductPage {
     }
     public ProductPage Add_to_Cart(){
         $(Add_To_Cart_Btn_Locator).click();
+        return this;
+    }
+
+    public ProductPage Layer_Cart_Continue_Shopping(){
+        $(Continue_Shopping_Btn_Locator).isDisplayed();
+        $(Continue_Shopping_Btn_Locator).click();
+        return this;
+    }
+    public ProductPage Layer_Cart_Proceed_to_Checkout(){
+        $(Proceed_To_CheckOut_Btn_Locator).isDisplayed();
+        $(Proceed_To_CheckOut_Btn_Locator).click();
         return this;
     }
 }

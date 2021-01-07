@@ -1,5 +1,6 @@
 package test;
 
+import Pages.CartSummaryPage;
 import Pages.HomePage;
 import Pages.ProductPage;
 import Pages.SearchResultPage;
@@ -16,6 +17,7 @@ public class CodeChallenge {
     HomePage Automation = new HomePage();
     SearchResultPage Search = new SearchResultPage();
     ProductPage Product = new ProductPage();
+    CartSummaryPage Summary = new CartSummaryPage();
 
     @BeforeClass
     public static void setup() {
@@ -23,30 +25,51 @@ public class CodeChallenge {
         Selenide.open("/");
         getWebDriver().manage().window().maximize();
     }
-   @Test
+   @Test(groups = "Exercise 1")
     public void Add_Product_From_Main() throws InterruptedException {
        Automation.Selected_Product_From_Homepage();
        Product.Send_Value_of_Quantity();
        Product.Reduce_Quantity_By_Button();
        Product.Select_Size();
-       Thread.sleep(5000);
        Product.Color_Option();
        Thread.sleep(5000);
        Product.Add_to_Cart();
+       Product.Layer_Cart_Proceed_to_Checkout();
    }
-    @Test
+    @Test(groups = "Exercise 2")
+    public void Delete_Products_Scenarios() throws InterruptedException {
+        Automation.Search_For_Valid_Product();
+        Thread.sleep(1000);
+        Search.Valid_Search_Result();
+        Thread.sleep(2000);
+        Search.Results_Founds();
+        Thread.sleep(1000);
+        Summary.Delete_Fourth_Product_By_Value_QTY();
+        Thread.sleep(1000);
+        Summary.Delete_Third_Product_By_Minus_Btn();
+        Thread.sleep(1000);
+        Summary.Delete_Second_Product_By_Bin_Btn();
+        Thread.sleep(3000);
+        Summary.Delete_Remaining_Product_By_Menu();
+        Thread.sleep(5000);
+    }
+
+
+
+
+    @Test(groups = "Exercise 3")
     public void Search_Result_Valid(){
         Automation.Search_For_Valid_Product();
         Search.Valid_Search_Result();
     }
 
-    @Test
+    @Test(groups = "Exercise 3")
     public void Search_Result_Invalid(){
         Automation.Search_For_Invalid_Product();
         Search.Invalid_Search_Result();
     }
 
-    @Test
+    @Test(groups = "Exercise 3")
     public void StoreInformation() {
 
         Automation.find_Store_Information();
@@ -55,7 +78,7 @@ public class CodeChallenge {
     }
     @AfterClass
     public static void afterClass(){
-                //Selenide.closeWebDriver();
+                Selenide.closeWebDriver();
     }
 
 }
