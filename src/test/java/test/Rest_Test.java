@@ -9,5 +9,7 @@ public class Rest_Test {
     @Test
     public void Walter_Wait(){
         character.listing();
+        character.Get();
+
     }
 }

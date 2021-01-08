@@ -1,19 +1,15 @@
 package Rest;
-import org.json.JSONArray;
-import io.restassured.*;
-import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 
-import static io.restassured.RestAssured.get;
-import static io.restassured.path.json.JsonPath.from;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.json.JSONArray;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.get;
 
 
 public class CharacterRequest {
@@ -28,28 +24,27 @@ public class CharacterRequest {
 
 
     public CharacterRequest Get() {
-        RestAssured.baseURI = "https://breakingbadapi.com/";
+        RestAssured.baseURI = Base_Url;
         Response response = RestAssured.given().when().get(Path + Endpoint).then().
                 contentType(ContentType.JSON).
                 extract().response();
-        JsonPath js = response.jsonPath();
-        String name = js.get("name");
-        //String id = js.get("id");
-        //String Walter_White_ID = js.getString("char_id");
-        System.out.println(name);
-        //jsonAsString = response.asString();
+
+        Pojo[] returnedCharacters = response.getBody().as(Pojo[].class);
+        for (Pojo returnedCharacter : returnedCharacters) {
+            System.out.println("Character Name: " + returnedCharacter.getName());
+            System.out.println("Portrayed: " + returnedCharacter.getPortrayed());
+            System.out.println("------------------------------------------------------");
+        }
+
 
         return this;
     }
 
     public CharacterRequest listing() {
-        RequestSpecification myreq = RestAssured.given();
-
+        RequestSpecification Request = RestAssured.given();
         Response MyRes;
-        MyRes = myreq.get("https://breakingbadapi.com/api/characters");
+        MyRes = Request.get(Base_Url+Path+Endpoint);
         String jsonResponse = MyRes.asString();
-       // System.out.println("Full String is" + jsonResponse);
-
 
         JSONArray jsonArray = new JSONArray(jsonResponse);
         for (int i = 0; i < jsonArray.length(); i++) {
@@ -64,22 +59,4 @@ public class CharacterRequest {
         return this;
     }
 }
-/*
-    public CharacterRequest Mapper_Response(){
-        ArrayList<Map<String,?>> jsonAsArrayList = from(jsonAsString).get("");
 
-        return this;
-    }
-
-    public CharacterRequest Walter_White(){
-        List<String> character_name = response.path("name");
-        for (String character : character_name){
-
-        }
-
-            return this;
-    }*/
-
-
-/*"char_id": 1,
-  "name": "Walter White",*/
