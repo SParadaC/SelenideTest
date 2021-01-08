@@ -2,14 +2,12 @@ package Pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-    public class HomePage {
+public class HomePage {
         By Store_info_Locator = By.xpath("//section[@id='block_contact_infos']/div/ul/li");
         By Search_Box_Locator = By.cssSelector("#search_query_top");
         By Chiffon_Dress_Locator = By.cssSelector(".product-name[title='Printed Chiffon Dress']");
