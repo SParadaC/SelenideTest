@@ -16,51 +16,64 @@ public class ProductPage {
     By Continue_Shopping_Btn_Locator = By.cssSelector("[title='Continue shopping']");
     By Proceed_To_CheckOut_Btn_Locator = By.cssSelector("[title='Proceed to checkout']");
 
-    public ProductPage Send_Value_of_Quantity(){
+
+    //Inside a product page, send value to quantity Field
+    public ProductPage Send_Value_of_Quantity() {
         $(Quantity_TextBox_Locator).clear();
         $(Quantity_TextBox_Locator).sendKeys("5");
         System.out.println("Quantity of place order: " + $(Quantity_TextBox_Locator).getValue());
         return this;
     }
 
-    public ProductPage Reduce_Quantity_By_Button(){
+    //Reduce amount in the quantity field by pressing the minus button
+    public ProductPage Reduce_Quantity_By_Button() {
         $(Minus_Quantity_BTN_Locator).doubleClick();
         System.out.println("Quantity of place order: " + $(Quantity_TextBox_Locator).getValue());
         return this;
     }
-    public ProductPage Increase_Quantity_By_Button(){
+
+    //Increase amount of quantity by pressing the plus button
+    public ProductPage Increase_Quantity_By_Button() {
         $(Plus_Quantity_BTN_Locator).doubleClick();
         System.out.println($(Quantity_TextBox_Locator).getValue());
         return this;
     }
-    public ProductPage Select_Size(){
+
+    //Select size of the product
+    public ProductPage Select_Size() {
         System.out.println("Preselected size: " + $(Size_DropDown_Locator).getSelectedText());
         $(Size_DropDown_Locator).selectOptionContainingText("M");
         System.out.println("Selected sizes: " + $(Size_DropDown_Locator).getSelectedText());
         return this;
     }
-    public ProductPage Color_Option()  {
+
+    //Select a color of the available options
+    public ProductPage Color_Option() {
         ElementsCollection colors = $$(Color_Options_Locator);
         System.out.println("Amount of available colors: " + colors.size());
-        for (int i=0; i<colors.size(); i++
-             ) {
-            System.out.println("Available colors: " + colors.get(i).getAttribute("name"));
+        for (com.codeborne.selenide.SelenideElement color : colors) {
+            System.out.println("Available colors: " + color.getAttribute("name"));
         }
 
         colors.get(0).click();
         return this;
     }
-    public ProductPage Add_to_Cart(){
+
+    //After the product parameter has been fill add product to cart
+    public ProductPage Add_to_Cart() {
         $(Add_To_Cart_Btn_Locator).click();
         return this;
     }
 
-    public ProductPage Layer_Cart_Continue_Shopping(){
+    //Select the Continue Shopping option after the product has been added to the cart
+    public ProductPage Layer_Cart_Continue_Shopping() {
         $(Continue_Shopping_Btn_Locator).isDisplayed();
         $(Continue_Shopping_Btn_Locator).click();
         return this;
     }
-    public ProductPage Layer_Cart_Proceed_to_Checkout(){
+
+    //Select the proceed to checkout button after the product has been added to the cart
+    public ProductPage Layer_Cart_Proceed_to_Checkout() {
         $(Proceed_To_CheckOut_Btn_Locator).isDisplayed();
         $(Proceed_To_CheckOut_Btn_Locator).click();
         return this;

@@ -16,6 +16,9 @@ By Bin_Button_Second_Element = By.xpath("(//a[@title='Delete'])[2]");
 By Cart_Menu_Locator = By.cssSelector("a[title='View my shopping cart']");
 By Cart_Menu_X_Button = By.cssSelector("dl[class='products']>dt>span>a");
 
+
+    //Method to delete 4 item when there is 4 product in the cart
+    //not valid wh
     public CartSummaryPage Delete_Fourth_Product_By_Value_QTY(){
         $(Quantity_TextBox_Fourth_Product_Locator).scrollIntoView(true).shouldBe(Condition.visible).setValue("0").pressEnter().shouldNot(Condition.exist);
                return this;
