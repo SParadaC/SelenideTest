@@ -17,7 +17,7 @@ public class Pojo {
         private String portrayed;
         private String category;
         private List<Object> betterCallSaulAppearance = null;
-        private Map<String, Object> additionalProperties = new HashMap<>();
+        private final Map<String, Object> additionalProperties = new HashMap<>();
 
         public Integer getCharId() {
             return charId;

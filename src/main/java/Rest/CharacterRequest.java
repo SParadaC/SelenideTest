@@ -6,9 +6,6 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONArray;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static io.restassured.RestAssured.get;
 
 
@@ -16,7 +13,7 @@ public class CharacterRequest {
 
 
     public static Response response;
-    public static String jsonAsString;
+
 
     String Base_Url = "https://breakingbadapi.com/";
     String Path = "api/";
@@ -35,8 +32,6 @@ public class CharacterRequest {
             System.out.println("Portrayed: " + returnedCharacter.getPortrayed());
             System.out.println("------------------------------------------------------");
         }
-
-
         return this;
     }
 
