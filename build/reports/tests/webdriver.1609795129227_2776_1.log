@@ -1,0 +1,238 @@
+[1609795129.362][INFO]: Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 47232
+[1609795129.362][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1609795130.050][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--no-sandbox" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "C:\\Users\\Saul Parada\\IdeaProjects\\SelenideTest\\build\\downloads\\1609795128808_2776_1",
+               "plugins.always_open_pdf_externally": true,
+               "profile.default_content_setting_values.automatic_downloads": 1
+            }
+         },
+         "pageLoadStrategy": "normal"
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "acceptSslCerts": true,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--no-sandbox" ],
+         "excludeSwitches": [ "enable-automation", "load-extension" ],
+         "extensions": [  ],
+         "prefs": {
+            "credentials_enable_service": false,
+            "download.default_directory": "C:\\Users\\Saul Parada\\IdeaProjects\\SelenideTest\\build\\downloads\\1609795128808_2776_1",
+            "plugins.always_open_pdf_externally": true,
+            "profile.default_content_setting_values.automatic_downloads": 1
+         }
+      },
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "pageLoadStrategy": "normal",
+      "takesScreenshot": true
+   }
+}
+[1609795130.054][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "credentials_enable_service": false,
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "C:\\Users\\Saul Parada\\IdeaProjects\\SelenideTest\\build\\downloads\\1609795128808_2776_1"
+   },
+   "plugins": {
+      "always_open_pdf_externally": true
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "automatic_downloads": 1,
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1609795130.066][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1609795130.069][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-blink-features=ShadowDOMV0 --enable-logging --ignore-certificate-errors --log-level=0 --no-first-run --no-sandbox --no-service-autorun --password-store=basic --proxy-bypass-list=<-loopback> --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\SAULPA~1\AppData\Local\Temp\scoped_dir9284_1689295435" data:,
+[1609795130.597][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1609795132.630][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1609795134.665][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "87.0.4280.88",
+      "chrome": {
+         "chromedriverVersion": "87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761})",
+         "userDataDir": "C:\\Users\\SAULPA~1\\AppData\\Local\\Temp\\scoped_dir9284_1689295435"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:60647"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "05ef52499c42abc7235b1e46e316048e"
+}
+[1609795134.724][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND SetWindowRect {
+   "height": 768,
+   "width": 1366
+}
+[1609795134.724][INFO]: Waiting for pending navigations...
+[1609795134.726][INFO]: Done waiting for pending navigations. Status: ok
+[1609795134.836][INFO]: Waiting for pending navigations...
+[1609795134.837][INFO]: Done waiting for pending navigations. Status: ok
+[1609795134.837][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE SetWindowRect {
+   "height": 738,
+   "width": 1298,
+   "x": 10,
+   "y": 10
+}
+[1609795134.843][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND SetTimeouts {
+   "pageLoad": 30000
+}
+[1609795134.843][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE SetTimeouts
+[1609795134.852][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND Navigate {
+   "url": "http://automationpractice.com//"
+}
+[1609795134.852][INFO]: Waiting for pending navigations...
+[1609795134.853][INFO]: Done waiting for pending navigations. Status: ok
+[1609795137.176][INFO]: Waiting for pending navigations...
+[1609795138.803][INFO]: Done waiting for pending navigations. Status: ok
+[1609795138.803][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE Navigate
+[1609795138.909][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//section[@id='block_contact_infos']/div/ul/li"
+}
+[1609795138.909][INFO]: Waiting for pending navigations...
+[1609795138.911][INFO]: Done waiting for pending navigations. Status: ok
+[1609795138.930][INFO]: Waiting for pending navigations...
+[1609795138.931][INFO]: Done waiting for pending navigations. Status: ok
+[1609795138.931][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "288753c4-2e51-45a0-9830-27757e3d3ee5"
+}
+[1609795138.941][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND ExecuteScript {
+   "args": [ {
+      "ELEMENT": "288753c4-2e51-45a0-9830-27757e3d3ee5",
+      "element-6066-11e4-a52e-4f735466cecf": "288753c4-2e51-45a0-9830-27757e3d3ee5"
+   } ],
+   "script": "arguments[0].scrollIntoView(true)"
+}
+[1609795138.941][INFO]: Waiting for pending navigations...
+[1609795138.942][INFO]: Done waiting for pending navigations. Status: ok
+[1609795138.946][INFO]: Waiting for pending navigations...
+[1609795138.948][INFO]: Done waiting for pending navigations. Status: ok
+[1609795138.948][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE ExecuteScript null
+[1609795138.956][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND FindElements {
+   "using": "xpath",
+   "value": "//section[@id='block_contact_infos']/div/ul/li"
+}
+[1609795138.956][INFO]: Waiting for pending navigations...
+[1609795138.957][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.014][INFO]: Waiting for pending navigations...
+[1609795139.018][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.018][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "288753c4-2e51-45a0-9830-27757e3d3ee5"
+}, {
+   "element-6066-11e4-a52e-4f735466cecf": "1e2c6cd7-1322-4944-ab00-ca44f9b15f76"
+}, {
+   "element-6066-11e4-a52e-4f735466cecf": "afd88307-960b-4891-af88-5ad4a32a2a7d"
+} ]
+[1609795139.033][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND GetElementText {
+   "id": "288753c4-2e51-45a0-9830-27757e3d3ee5"
+}
+[1609795139.033][INFO]: Waiting for pending navigations...
+[1609795139.035][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.057][INFO]: Waiting for pending navigations...
+[1609795139.059][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.059][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE GetElementText "Selenium Framework, Research Triangle Park, North Carolina, USA"
+[1609795139.063][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND GetElementText {
+   "id": "1e2c6cd7-1322-4944-ab00-ca44f9b15f76"
+}
+[1609795139.063][INFO]: Waiting for pending navigations...
+[1609795139.064][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.085][INFO]: Waiting for pending navigations...
+[1609795139.087][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.087][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE GetElementText "Call us now: (347) 466-7432"
+[1609795139.090][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND GetElementText {
+   "id": "afd88307-960b-4891-af88-5ad4a32a2a7d"
+}
+[1609795139.090][INFO]: Waiting for pending navigations...
+[1609795139.091][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.113][INFO]: Waiting for pending navigations...
+[1609795139.114][INFO]: Done waiting for pending navigations. Status: ok
+[1609795139.114][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE GetElementText "Email: support@seleniumframework.com"
+[1609795139.123][INFO]: [05ef52499c42abc7235b1e46e316048e] COMMAND Quit {
+
+}
+[1609795139.167][INFO]: [05ef52499c42abc7235b1e46e316048e] RESPONSE Quit
